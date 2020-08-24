@@ -1,27 +1,52 @@
-#container {
-  text-align: center;
+h3{
+  margin-top:4rem;
+}
 
+ion-grid p{
+  font-size: 12px;
+}
+
+ion-grid{
+  margin-top: 2.5rem;
+}
+
+.main-logo{
+  width: 50%;
+}
+
+ion-card{
+  z-index: 10;
+}
+
+ion-card img{
+  color: #31708f;
+  width: 60%;
+}
+
+ion-card p{
+  color: #31708f;
+  font-weight: bold;
+}
+
+.slogan{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+ion-fab-button{
+  transform: scale(.8);
+}
+
+.blob-image{
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  z-index:1;
+  bottom: 0;
+  left: -50%;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+.blob-image2{
+  position: absolute;
+  z-index:1;
+  top: 10%;
+  right: -50%;
 }

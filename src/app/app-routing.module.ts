@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'lawyers',
+    loadChildren: () => import('./pages/lawyers/lawyers.module').then( m => m.LawyersPageModule)
+  },
+  {
+    path: 'links',
+    loadChildren: () => import('./pages/links/links.module').then( m => m.LinksPageModule)
+  },
 ];
 
 @NgModule({

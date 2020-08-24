@@ -1,0 +1,47 @@
+.link-text{
+    font-size: 13px;
+}
+
+ion-row{
+    padding-right: 15px;
+}
+
+ion-col{
+    margin-bottom: -14px !important;
+}
+
+ion-card{
+    width: 100%;
+    z-index: 10;
+}
+
+.end{
+    float: right;
+    margin-top: -16px;
+}
+
+.blob-image{
+    position: absolute;
+    z-index:1; 
+    bottom: 0;
+    left: -50%;
+  }
+  
+  ion-grid{
+    margin-top: 2.5rem;
+  }
+
+  
+  .blob-image{
+    position: absolute;
+    z-index:1;
+    bottom: 0;
+    left: -50%;
+  }
+
+  .blob-image2{
+    position: absolute;
+    z-index:1;
+    top: 10%;
+    right: -50%;
+  }
