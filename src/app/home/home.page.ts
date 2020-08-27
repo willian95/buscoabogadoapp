@@ -22,4 +22,16 @@ export class HomePage {
 
   }
 
+  goToContact(){
+    this.router.navigateByUrl("/contact")
+  }
+
+  goToLawyerContact(){
+    this.router.navigateByUrl("/lawyer-contact")
+  }
+
+  goToServices(){
+    this.router.navigateByUrl("/services")
+  }
+
 }

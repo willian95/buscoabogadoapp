@@ -19,6 +19,18 @@ const routes: Routes = [
     path: 'links',
     loadChildren: () => import('./pages/links/links.module').then( m => m.LinksPageModule)
   },
+  {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then( m => m.ContactPageModule)
+  },
+  {
+    path: 'lawyer-contact',
+    loadChildren: () => import('./pages/lawyer-contact/lawyer-contact.module').then( m => m.LawyerContactPageModule)
+  },
+  {
+    path: 'services',
+    loadChildren: () => import('./pages/services/services.module').then( m => m.ServicesPageModule)
+  },
 ];
 
 @NgModule({

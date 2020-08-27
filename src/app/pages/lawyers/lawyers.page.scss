@@ -29,6 +29,15 @@ ion-card{
     width: 100%;
 }
 
+ion-row{
+    padding-right: 15px;
+}
+
+ion-col{
+    margin-bottom: -14px !important;
+}
+
+
 .end{
     float: right;
 }
@@ -37,7 +46,7 @@ ion-card{
             position: absolute;
 z-index:1;
 bottom: 0;
-left: -50%;
+left: -75%;
 }
 
 .blob-image2{

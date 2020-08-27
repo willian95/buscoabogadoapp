@@ -1,0 +1,18 @@
+ion-card{
+    z-index: 10;
+    width: 95%;
+}
+
+.blob-image{
+    position: absolute;
+    z-index:1;
+    bottom: 0;
+    left: -75%;
+}
+
+.blob-image2{
+    position: absolute;
+    z-index:1;
+    top: 10%;
+    right: -50%;
+}

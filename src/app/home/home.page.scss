@@ -21,6 +21,7 @@ ion-card{
 ion-card img{
   color: #31708f;
   width: 60%;
+  margin-bottom: -15px;
 }
 
 ion-card p{
@@ -41,7 +42,7 @@ ion-fab-button{
   position: absolute;
   z-index:1;
   bottom: 0;
-  left: -50%;
+  left: -75%;
 }
 
 .blob-image2{

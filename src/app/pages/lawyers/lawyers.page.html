@@ -11,56 +11,110 @@
   <ion-grid>
     <ion-row>
       <ion-col class="ion-text-center" size="4">
-        <p class="round-border ion-text-center round-active">
+        <p class="round-border ion-text-center" [ngClass]="{'round-active': step === 1}">
           1
         </p>
       </ion-col>
       <ion-col class="ion-text-center" size="4">
-        <p class="round-border ion-text-center">
+        <p class="round-border ion-text-center" [ngClass]="{'round-active': step === 2}">
           2
         </p>
       </ion-col>
       <ion-col class="ion-text-center" size="4">
-        <p class="round-border ion-text-center">
+        <p class="round-border ion-text-center" [ngClass]="{'round-active': step === 3}">
           3
         </p>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-  <div>
+  <div class="ion-text-center" *ngIf="step > 1">
+    <ion-button class="primary" (click)="setStep(step-1)">Volver</ion-button>
+  </div>
+
+  <div *ngIf="step == 1">
 
     <h4 class="ion-text-center">Selecciona tu tipo de caso</h4>
 
-    <ion-list>
-      <ion-item lines="none">
-        <ion-card>
-          <ion-card-content>
-            Dicom
-            <ion-icon name="arrow-forward-outline" class="end"></ion-icon>
-          </ion-card-content>
-        </ion-card>
-      </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" *ngFor="let caseDescription of cases">
+          
+            <ion-card (click)="setCase(caseDescription.description)" class="overlapped">
+              <ion-card-content>
+                {{ caseDescription.name }}
+                <ion-icon name="arrow-forward-outline" class="end"></ion-icon>
+              </ion-card-content>
+            </ion-card>
+    
+        </ion-col>
+      </ion-row>
+      <img src="assets/blob1.svg" class="blob-image" alt="">
+      <img src="assets/blob2.svg" class="blob-image2" alt="">
+    </ion-grid>
 
-      <ion-item lines="none">
-        <ion-card >
-          <ion-card-content>
-            Divorcios
-            <ion-icon name="arrow-forward-outline" class="end"></ion-icon>
-          </ion-card-content>
-        </ion-card>
-      </ion-item>
+  </div>
 
-      <ion-item lines="none">
-        <ion-card>
-          <ion-card-content>
-            Dicom
-            <ion-icon name="arrow-forward-outline" class="end"></ion-icon>
-          </ion-card-content>
-        </ion-card>
-      </ion-item>
-      
-    </ion-list>
+  <div *ngIf="step == 2">
+
+    <h4 class="ion-text-center">Selecciona tu tipo de caso</h4>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col  *ngFor="let option of optionArrays" size="12">
+          <ion-card (click)="setOption(option.description)">
+            <ion-card-content>
+              {{ option.name }}
+              <ion-icon name="arrow-forward-outline" class="end"></ion-icon>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <img src="assets/blob1.svg" class="blob-image" alt="">
+      <img src="assets/blob2.svg" class="blob-image2" alt="">
+    </ion-grid>
+  </div>
+
+  <div *ngIf="step == 3">
+
+    <ion-item class="overlapped">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item class="overlapped">
+      <ion-label position="floating">RUT</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item class="overlapped">
+      <ion-label position="floating">Ciudad</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item class="overlapped">
+      <ion-label position="floating">Comuna</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item class="overlapped">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item class="overlapped">
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item class="overlapped">
+      <ion-label position="floating">Descripción del caso</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item>
+
+    <div class="ion-text-center">
+      <ion-button class="btn btn-primary" style="margin-top: 15px;">Enviar</ion-button>
+    </div>
 
   </div>
 

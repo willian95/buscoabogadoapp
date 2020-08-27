@@ -10,10 +10,10 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" >
-        <ion-card>
+        <ion-card (click)="goToServices()">
           <ion-card-content class="ion-text-center">
             <img src="assets/hammer.svg">
-            <p class="ion-text-center" >Servicios</p>
+            <p class="ion-text-center">Servicios</p>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -36,7 +36,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card>
+        <ion-card (click)="goToContact()">
           <ion-card-content class="ion-text-center">
             <img src="assets/books.svg">
             <p class="ion-text-center">Contacto</p>
@@ -47,6 +47,11 @@
     <img src="assets/blob1.svg" class="blob-image" alt="">
     <img src="assets/blob2.svg" class="blob-image2" alt="">
   </ion-grid>
+
+    <div class="ion-text-center">
+      <p>¿Eres abogado?</p>
+      <ion-button shape="round" (click)="goToLawyerContact()" fill="outline">Contáctanos</ion-button>
+    </div>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
