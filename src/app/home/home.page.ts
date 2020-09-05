@@ -10,9 +10,9 @@ export class HomePage {
   
   constructor(private router:Router) {}
 
-  goToLawyers(){
+  goToServices(){
 
-    this.router.navigateByUrl("/lawyers")
+    this.router.navigateByUrl("/services")
 
   }
 
@@ -20,6 +20,10 @@ export class HomePage {
 
     this.router.navigateByUrl("/links")
 
+  }
+
+  goToDicom(){
+    this.router.navigateByUrl("/dicom")
   }
 
   goToContact(){
@@ -30,8 +34,13 @@ export class HomePage {
     this.router.navigateByUrl("/lawyer-contact")
   }
 
-  goToServices(){
-    this.router.navigateByUrl("/services")
+  goToLawyers(){
+    this.router.navigateByUrl("/lawyers")
   }
+
+
+  /*goToServices(){
+    this.router.navigateByUrl("/services")
+  }*/
 
 }

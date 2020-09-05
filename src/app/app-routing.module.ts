@@ -12,10 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'lawyers',
-    loadChildren: () => import('./pages/lawyers/lawyers.module').then( m => m.LawyersPageModule)
-  },
-  {
     path: 'links',
     loadChildren: () => import('./pages/links/links.module').then( m => m.LinksPageModule)
   },
@@ -31,6 +27,15 @@ const routes: Routes = [
     path: 'services',
     loadChildren: () => import('./pages/services/services.module').then( m => m.ServicesPageModule)
   },
+  {
+    path: 'lawyers',
+    loadChildren: () => import('./pages/lawyers/lawyers.module').then( m => m.LawyersPageModule)
+  },
+  {
+    path: 'dicom',
+    loadChildren: () => import('./pages/dicom/dicom.module').then( m => m.DicomPageModule)
+  },
+
 ];
 
 @NgModule({
