@@ -9,10 +9,15 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import {TimePageModule} from './pages/modals/time/time.module';
+
+import { CalendarModule } from 'ion2-calendar';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, CalendarModule, IonicModule.forRoot(), AppRoutingModule, TimePageModule],
   providers: [
     StatusBar,
     SplashScreen,

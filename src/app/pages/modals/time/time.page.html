@@ -1,0 +1,30 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()"><ion-icon name="close-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+
+  <h3 class="ion-text-center">¿Hora de la cita?</h3>
+
+  <ion-card>
+    <ion-card-content>
+      <div class="ion-text-center">
+        <ion-item class="ion-text-center">
+          <ion-label position="floating"></ion-label>
+          <ion-datetime displayFormat="HH:mm" placeholder="HH:MM"></ion-datetime>
+        </ion-item>
+      </div>
+
+      <div class="ion-text-center">
+        <ion-button>Agendar</ion-button>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

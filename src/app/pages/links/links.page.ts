@@ -12,4 +12,8 @@ export class LinksPage implements OnInit {
   ngOnInit() {
   }
 
+  goToPage(link){
+
+  }
+
 }

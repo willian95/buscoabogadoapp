@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'dicom',
     loadChildren: () => import('./pages/dicom/dicom.module').then( m => m.DicomPageModule)
   },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+  }
 
 ];
 

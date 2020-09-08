@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button icon="close-outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h3 class="ion-text-center">Agendar Cita</h3>
+
+  <ion-calendar [(ngModel)]="date"
+  (change)="onChange($event)"
+  [type]="type"
+  [options]="optionsBasic"
+  [format]="'YYYY-MM-DD'">
+</ion-calendar>
+ 
+
+</ion-content>

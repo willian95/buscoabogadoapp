@@ -1,5 +1,7 @@
 {
   "name": "buscoAbogado",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
