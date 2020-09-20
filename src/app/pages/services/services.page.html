@@ -81,7 +81,7 @@
         </ion-col>
 
         <ion-col  *ngFor="let option of optionArrays" size="12">
-          <ion-card (click)="setOption(option.description)">
+          <ion-card (click)="setOption(option.name)">
             <ion-card-content>
               {{ option.name }}
               <ion-icon name="arrow-forward-outline" class="end"></ion-icon>
@@ -110,41 +110,62 @@
 
     <ion-item class="overlapped">
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="name"></ion-input>
+      <div *ngIf="errors != null">
+        <small *ngIf="errors.hasOwnProperty('client_name')" style="color: #e74c3c">{{ errors['client_name'][0] }}</small>
+      </div>
     </ion-item>
 
     <ion-item class="overlapped">
       <ion-label position="floating">RUT</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="rut"></ion-input>
+      <div *ngIf="errors != null">
+        <small *ngIf="errors.hasOwnProperty('client_rut')" style="color: #e74c3c">{{ errors['client_rut'][0] }}</small>
+      </div>
     </ion-item>
 
     <ion-item class="overlapped">
       <ion-label position="floating">Ciudad</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="city"></ion-input>
+      <div *ngIf="errors != null">
+        <small *ngIf="errors.hasOwnProperty('client_city')" style="color: #e74c3c">{{ errors['client_city'][0] }}</small>
+      </div>
     </ion-item>
 
     <ion-item class="overlapped">
       <ion-label position="floating">Comuna</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="commune"></ion-input>
+      <div *ngIf="errors != null">
+        <small *ngIf="errors.hasOwnProperty('client_commune')" style="color: #e74c3c">{{ errors['client_commune'][0] }}</small>
+      </div>
     </ion-item>
 
     <ion-item class="overlapped">
       <ion-label position="floating">Correo</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="email"></ion-input>
+      <div *ngIf="errors != null">
+        <small *ngIf="errors.hasOwnProperty('client_email')" style="color: #e74c3c">{{ errors['client_email'][0] }}</small>
+      </div>
     </ion-item>
 
     <ion-item class="overlapped">
       <ion-label position="floating">Teléfono</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="phone"></ion-input>
+      <div *ngIf="errors != null">
+        <small *ngIf="errors.hasOwnProperty('client_phone')" style="color: #e74c3c">{{ errors['client_phone'][0] }}</small>
+      </div>
     </ion-item>
 
     <ion-item class="overlapped">
       <ion-label position="floating">Descripción del caso</ion-label>
-      <ion-textarea></ion-textarea>
+      <ion-textarea [(ngModel)]="description"></ion-textarea>
+      <div *ngIf="errors != null">
+        <small *ngIf="errors.hasOwnProperty('client_description')" style="color: #e74c3c">{{ errors['client_description'][0] }}</small>
+      </div>
     </ion-item>
 
     <div class="ion-text-center">
-      <ion-button class="btn btn-primary" style="margin-top: 15px;">Enviar</ion-button>
+      <ion-button class="btn btn-primary" style="margin-top: 15px;" (click)="send()">Enviar</ion-button>
     </div>
 
   </div>

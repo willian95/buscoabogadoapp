@@ -39,7 +39,7 @@ export class CalendarPage implements OnInit {
 
   onChange($event) {
     this.date = $event.format('DD-MM-YYYY');
-      this.presentModal()
+    this.presentModal()
 
   }
 

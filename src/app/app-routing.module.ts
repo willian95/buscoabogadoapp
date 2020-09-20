@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'calendar',
     loadChildren: () => import('./pages/calendar/calendar.module').then( m => m.CalendarPageModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./modals/checkout/checkout.module').then( m => m.CheckoutPageModule)
   }
 
 ];

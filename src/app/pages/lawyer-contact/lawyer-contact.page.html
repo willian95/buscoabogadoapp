@@ -19,36 +19,54 @@
   
         <ion-item>
           <ion-label position="floating">Nombre</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="name"></ion-input>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('name')" style="color: #e74c3c">{{ errors['name'][0] }}</small>
+          </div>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">RUT</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="rut"></ion-input>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('rut')" style="color: #e74c3c">{{ errors['rut'][0] }}</small>
+          </div>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('email')" style="color: #e74c3c">{{ errors['email'][0] }}</small>
+          </div>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Teléfono</ion-label>
-          <ion-input type="number"></ion-input>
+          <ion-input type="number" [(ngModel)]="phone"></ion-input>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('phone')" style="color: #e74c3c">{{ errors['phone'][0] }}</small>
+          </div>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Especialidad</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="specialty"></ion-input>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('specialty')" style="color: #e74c3c">{{ errors['specialty'][0] }}</small>
+          </div>
         </ion-item>
 
         <ion-item>
           <ion-label>Fecha de Egreso</ion-label>
-          <ion-datetime [(ngModel)]="createdDate" value="" displayFormat="DD MM YYYY" cancelText="Cancelar" doneText="Ok"></ion-datetime>
+          <ion-datetime [(ngModel)]="graduated_date" value="" displayFormat="DD MM YYYY" cancelText="Cancelar" doneText="Ok"></ion-datetime>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('graduated_date')" style="color: #e74c3c">{{ errors['graduated_date'][0] }}</small>
+          </div>
         </ion-item>
 
         <p class="ion-text-center" style="margin-top: 2rem;">
-          <ion-button color="primary">Enviar</ion-button>
+          <ion-button color="primary" (click)="send()">Enviar</ion-button>
         </p>
   
       </ion-col>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-links',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinksPage implements OnInit {
 
-  constructor() { }
+  constructor(private iab: InAppBrowser) { }
 
   ngOnInit() {
   }
 
-  goToPage(link){
-
+  goToLink(link){
+    this.iab.create(link, '_system');
   }
 
 }

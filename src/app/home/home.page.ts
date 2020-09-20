@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  test:any;
   
   constructor(private router:Router) {}
+
+  ngOnInit(){
+    //this.test = this.domSanitizer.bypassSecurityTrustHtml("https://sandbox.flow.cl/app/web/pay.php?token=3E16D6B24426FF0EFE7728F9FB21CB90F15F284P")
+  }
 
   goToServices(){
 

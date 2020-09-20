@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import {TimePageModule} from './pages/modals/time/time.module';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 import { CalendarModule } from 'ion2-calendar';
 
@@ -17,9 +19,10 @@ import { CalendarModule } from 'ion2-calendar';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, CalendarModule, IonicModule.forRoot(), AppRoutingModule, TimePageModule],
+  imports: [BrowserModule, CalendarModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule, TimePageModule],
   providers: [
     StatusBar,
+    InAppBrowser,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UrlServiceService } from '../../services/url-service.service';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { LoadingController, AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-services',
@@ -11,12 +15,96 @@ export class ServicesPage implements OnInit {
   optionArrays:any
   option:any
   step:any = 1
+  url:any
   
+  name:any
+  rut:any
+  city:any
+  commune:any
+  email:any
+  phone:any
+  description:any
+  loading:any
+  errors:any
 
-  constructor() { }
+
+  constructor(private router: Router, private urlService: UrlServiceService, private http: HttpClient, public loadingController: LoadingController, public alertController: AlertController) { 
+    this.url = this.urlService.getUrl()
+  }
   
   ngOnInit() {
     
+  }
+
+  async presentLoading() {
+    this.loading = await this.loadingController.create({});
+    this.loading.present();
+  }
+
+  loadingDismiss(){
+    this.loading.dismiss()
+  }
+
+  send(){
+
+    this.presentLoading()
+
+    this.http.post(this.url+"/api/service", {client_name: this.name, client_rut: this.rut, client_email: this.email, client_phone: this.phone, client_commune: this.commune, client_city: this.city, client_description: this.description, client_case: this.case, client_category:this.option}).subscribe((res:any) => {
+
+      this.loadingDismiss()
+
+      if(res.success == true){
+
+        this.name = null
+        this.rut = null
+        this.city = null
+        this.commune = null
+        this.email = null
+        this.phone = null
+        this.description = null
+
+        this.presentAlert(res.msg, res.success)
+
+      }else{
+        this.presentAlert(res.msg, res.success)
+      }
+
+    }, 
+    (errorResponse: HttpErrorResponse) => {
+      this.loadingDismiss()
+      
+      if (errorResponse.error) {
+
+        if (errorResponse.error.errors) {
+          
+          this.presentAlert("Hay algunos campos que debe revisar", false)
+          this.errors = errorResponse.error.errors
+          
+    
+        }
+    
+      }
+
+    })
+
+  }
+
+  async presentAlert(message, success) {
+    const alert = await this.alertController.create({
+      message: message,
+      buttons: [ 
+        {
+          text: 'Ok!',
+          handler: () => {
+            if(success == true){
+              this.router.navigateByUrl("/")
+            }
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   setCase(caseDesctiption){
@@ -87,6 +175,7 @@ export class ServicesPage implements OnInit {
 
   setOption(option){
     this.option = option
+    console.log("option", this.option)
     this.setStep(3)
   }
 

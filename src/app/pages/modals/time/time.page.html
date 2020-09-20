@@ -13,14 +13,38 @@
   <ion-card>
     <ion-card-content>
       <div class="ion-text-center">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input [(ngModel)]="name"></ion-input>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('name')" style="color: #e74c3c">{{ errors['name'][0] }}</small>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Teléfono</ion-label>
+          <ion-input [(ngModel)]="phone"></ion-input>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('phone')" style="color: #e74c3c">{{ errors['phone'][0] }}</small>
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input [(ngModel)]="email"></ion-input>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('email')" style="color: #e74c3c">{{ errors['email'][0] }}</small>
+          </div>
+        </ion-item>
         <ion-item class="ion-text-center">
           <ion-label position="floating"></ion-label>
-          <ion-datetime displayFormat="HH:mm" placeholder="HH:MM"></ion-datetime>
+          <ion-datetime displayFormat="HH:mm" placeholder="HH:MM" [(ngModel)]="time"></ion-datetime>
+          <div *ngIf="errors != null">
+            <small *ngIf="errors.hasOwnProperty('time')" style="color: #e74c3c">{{ errors['time'][0] }}</small>
+          </div>
         </ion-item>
       </div>
 
       <div class="ion-text-center">
-        <ion-button>Agendar</ion-button>
+        <ion-button (click)="send()">Agendar</ion-button>
       </div>
 
     </ion-card-content>

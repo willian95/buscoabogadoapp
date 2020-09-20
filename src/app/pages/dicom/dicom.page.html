@@ -19,27 +19,29 @@
   
         <ion-item>
           <ion-label position="floating">Nombre</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="name"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">RUT</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="rut"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="floating">Teléfono</ion-label>
-          <ion-input type="number"></ion-input>
+          <ion-input type="number" [(ngModel)]="phone"></ion-input>
         </ion-item>
 
         <p class="ion-text-center" style="margin-top: 2rem;">
-          <ion-button color="primary">Pagar</ion-button>
+          <ion-button color="primary" (click)="checkout()">Pagar</ion-button>
         </p>
+
+        <iframe [src]="iframe" frameborder="0" *ngIf="showFrame == true"></iframe>
   
       </ion-col>
     </ion-row>
